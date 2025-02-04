@@ -19,7 +19,45 @@
             </style>
         @endif
     </head>
-    <body class="font-sans antialiased dark:bg-black dark:text-white/50">
-        <h1></h1>
+    <body class="font-sans antialiased flex flex-col items-center bg-slate-400" >
+
+        <div class="w-full max-w-md">
+            <h1 class="text-2xl mb-4 text-center">Form</h1>
+
+            
+            <form action="{{ route('form.store') }}" method="POST" class="flex flex-col justify-start shadow-xl p-8 bg-white rounded">
+                @csrf
+                <label for="name" class="mb-2">Nombre de la empresa</label>
+                <input type="text" name="name" id="name" class="mb-4 border border-gray-300 p-2 rounded" value="{{ old('name')}}">
+
+                @error('name')
+                <small class="text-red-600">{{$message}}</small>
+                @enderror
+
+                
+                <label for="description" class="mb-2">Descripción de la empresa</label>
+                <input type="text" name="description" id="description" class="mb-4 border border-gray-300 p-2 rounded" value="{{ old('description')}}">
+
+                @error('description')
+                <small class="text-red-600">{{$message}}</small>
+                @enderror
+                
+                <label for="email" class="mb-2">Correo Electrónico</label>
+                <input type="text" name="email" id="email" class="mb-4 border border-gray-300 p-2 rounded" value="{{ old('email')}}">
+            
+                @error('email')
+                <small class="text-red-600">{{$message}}</small>
+                @enderror
+
+                <label for="phone" class="mb-2">Teléfono</label>
+                <input type="text" name="phone" id="phone" class="mb-4 border border-gray-300 p-2 rounded" value="{{ old('phone')}}">
+
+                @error('phone')
+                <small class="text-red-600">{{$message}}</small>
+                @enderror
+                
+                <button type="submit" class="mt-4 bg-blue-500 text-white p-2 rounded">Enviar</button>
+            </form>
+        </div>
     </body>
 </html>
