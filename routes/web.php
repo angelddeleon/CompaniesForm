@@ -10,8 +10,6 @@ Route::get('/', function () {
 
 Route::post('/', [FormController::class, 'store'])->name('form.store');
 
+Route::get('/listcompanies', [FormController::class, 'getStore'])->name('form.getStore');
 
 
-Route::get('/exit', function () {
-    return 'Lo lograste';
-});
