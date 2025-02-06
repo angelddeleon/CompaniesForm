@@ -18,22 +18,20 @@
         </style>
     @endif
 </head>
-<body>
-    <div class="flex">
-        <a href="/"><</a>
-        <h3>Listado de Empresas</h3>
+    <body class="w-screen bg-white">
+    <div class="flex items-center m-4">
+        <a href="/" class="p-2 rounded-full mr-2 w-10 h-10 flex items-center justify-center shadow-xl bg-slate-600 text-white"><</a>
+        <h3 class="p-2 text-xl">Listado de Empresas</h3>
     </div>
 
     <div>
     @if(count($dataList) == 0)
-            <p>No hay empresas creadas.</p>
+            <p class="text-center">No hay empresas creadas.</p>
         @else
-            <p>Hay empresas creadas:</p>
-            <ul class="list-disc pl-5">
+            <ul class="flex flex-row justify-start flex-wrap ">
                 @foreach($dataList as $companie)
-                    <li>
+                    <li class="p-4 w-lg bg-white w-80 shadow-lg rounded-lg border border-gray-200 m-4">
                         <strong>Nombre:</strong> {{ $companie['name'] }} <br>
-                        <strong>Descripción:</strong> {{ $companie['description'] }} <br>
                         <strong>Correo:</strong> {{ $companie['email'] }} <br>
                         <strong>Teléfono:</strong> {{ $companie['phone'] }}
                     </li>

@@ -25,8 +25,9 @@
             <h1 class="text-2xl mb-4 text-center">Form</h1>
 
             
-            <form action="{{ route('form.store') }}" method="POST" class="flex flex-col justify-start shadow-xl p-8 bg-white rounded">
+            <form action="{{ route('form.store') }}" method="POST" class="flex flex-col justify-center shadow-xl p-8 bg-white rounded">
                 @csrf
+
                 <label for="name" class="mb-2">Nombre de la empresa</label>
                 <input type="text" name="name" id="name" class="mb-4 border border-gray-300 p-2 rounded" value="{{ old('name')}}">
 
